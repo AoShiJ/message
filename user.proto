@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+package user;
+option go_package="./user";
+
+enum Sex{
+  Man =0;
+  WaMan=10;
+}
+message UserInfo {
+  int64  Id       =1;
+  string Username =10;
+  string Password =15;
+  string Name     =20;
+  Sex    Sex      =30;
+  string Title    =40;
+  string Mobile   =50;
+}
+service User {
+  rpc Login(LoginRequest) returns(LoginResponse);
+  rpc SendMobile(SendMobileRequest) returns(SendMobileResponse);
+  rpc MobileLogin(MobileLoginRequest) returns(MobileLoginResponse);
+}
+message MobileLoginRequest {
+  string Username = 1;
+  string Password = 2;
+}
+
+message MobileLoginResponse {
+  UserInfo Info = 1;
+}
+message SendMobileRequest {
+  UserInfo Info = 1;
+}
+
+message SendMobileResponse {
+  UserInfo Info = 1;
+}
+
+message LoginRequest {
+  UserInfo Info = 1;
+}
+
+message LoginResponse {
+  UserInfo Info = 1;
+  string  Token=2;
+}

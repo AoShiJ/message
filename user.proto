@@ -28,9 +28,11 @@ message MobileLoginRequest {
 
 message MobileLoginResponse {
   UserInfo Info = 1;
+
 }
 message SendMobileRequest {
   UserInfo Info = 1;
+  string Code  = 2;;
 }
 
 message SendMobileResponse {

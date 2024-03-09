@@ -40,10 +40,9 @@ message SendMobileResponse {
 }
 
 message LoginRequest {
-  UserInfo Info = 1;
+ string Mobile =1;
 }
 
 message LoginResponse {
-  UserInfo Info = 1;
-  string  Token=2;
+  string  code =1;
 }

@@ -31,7 +31,7 @@ message MobileLoginResponse {
 
 }
 message SendMobileRequest {
-  UserInfo Info = 1;
+  string Mobile = 1;
   string Code  = 2;;
 }
 

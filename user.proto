@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 package user;
-option go_package="./user";
+option go_package="github.com/AoShiJ/message";
 
 enum Sex{
   Man =0;
@@ -36,7 +36,7 @@ message SendMobileRequest {
 }
 
 message SendMobileResponse {
-  UserInfo Info = 1;
+   string state= 1;
 }
 
 message LoginRequest {
